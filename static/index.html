@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Release Desk</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header><strong>Release Desk</strong><span>Client updates</span></header>
+  <main>
+    <div class="intro"><h1>Release notes</h1><button id="new" class="primary">New draft</button></div>
+    <p id="notice" role="status"></p>
+    <div class="layout">
+      <aside aria-label="Release notes"><h2>All notes</h2><ul id="notes"></ul></aside>
+      <section aria-label="Release detail">
+        <div id="summary" hidden><p id="state" class="state"></p><h2 id="title"></h2><p id="project"></p><pre id="body"></pre></div>
+        <form id="editor" hidden>
+          <div class="intro"><h2 id="editor-title">New draft</h2><button type="button" id="sample">Use example</button></div>
+          <label>Title<input id="draft-title" required maxlength="100"></label>
+          <label>Project<input id="draft-project" required maxlength="60"></label>
+          <label>Client update<textarea id="draft-body" required maxlength="6000" rows="6"></textarea></label>
+          <button class="primary" id="save">Save draft</button>
+        </form>
+        <div id="workflow" hidden>
+          <label id="reason-label" hidden>Feedback or reason<textarea id="reason" maxlength="1000" rows="2"></textarea></label>
+          <div class="actions" id="actions"></div>
+          <h3>Activity</h3><ol id="history"></ol>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
